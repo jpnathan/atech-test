@@ -1,18 +1,28 @@
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="text-center">Atech AngularJS</h1>
-  </div>
-  <div>
-    <a href="/viagens/new" class="btn btn-primary"> Nova Viagem </a>
-  </div>
+<div class="container" ng-controller="ViagemController">
+  <a href="/viagens/new" class="btn btn-primary"> Nova Viagem </a>
   <span class="row"></span>
   <div class="row">
-    <div class="panel panel-default col-md-2">
-      <div class="panel-heading">
-        <h3 class="panel-title text-center">{{fotos.titulo}}</h3>
-      </div>
-      <div class="panel-body">
-        <img class="img-responsive center-block" src="">
+    <div class="card">
+      <div class="panel panel-default col-md-3 viagem-card" ng-repeat="viagem in viagens">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">{{viagem.destino}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{viagem.origem}}</h6>
+            <p class="card-text">
+              <strong>Data:</strong> {{viagem.data | date:"dd/MM/yyyy"}} <br>
+              <strong>Hora:</strong> {{viagem.hora | date: "HH:mm:ss"}} <br>
+              <strong>Veiculo:</strong> {{viagem.veiculo}} <br>
+              <strong> Passageiro:</strong> {{viagem.nomePassageiro}} <br>
+              <strong> Contato:</strong> {{viagem.telPassageiro}} <br>
+              <strong> Segundo Passageiro:</strong> {{viagem.nome2Passageiro}} <br>
+              <strong> Segundo Contato:</strong> {{viagem.tel2Passageiro}} <br>
+            </p>
+            <p>
+              <a ng-click="remover(viagem)" class="btn btn-danger">Delete</a>  
+              <a href="/viagens/edit/{{viagem._id}}" class="btn btn-info">edit</a>  
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

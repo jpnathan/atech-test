@@ -1,45 +1,75 @@
-<div class="page-header text-center">
-  <h1>Cadastro de Viagem</h1>
+<div ng-controller="FormController">
+  <div class="page-header text-center">
+    <h1>Cadastro de Viagem</h1>
+  </div>
+
+  <p ng-show="msg.length" class="alert alert-danger">{{msg}}</p>
+  
+  <form novalidate name="form" class="container" ng-submit="save()">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Origem</label>
+        <input type="text" name="origem" class="form-control" ng-model="viagem.origem" required>
+        <span ng-show="form.$submitted && form.origem.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Destino</label>
+        <input type="text" name="destino" class="form-control" ng-model="viagem.destino" required>
+        <span ng-show="form.$submitted && form.destino.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Data</label>
+        <input type="date" name="data" class="form-control" ng-model="viagem.data" required>
+        <span ng-show="form.$submitted && form.data.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Hora</label>
+        <input type="time" name="hora" class="form-control" ng-model="viagem.hora" required>
+        <span ng-show="form.$submitted && form.hora.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Veículo</label>
+        <input type="text" name="veiculo" class="form-control" ng-model="viagem.veiculo" required>
+        <span ng-show="form.$submitted && form.veiculo.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Nome Passageiro</label>
+        <input type="text" name="nomePassageiro" class="form-control" ng-model="viagem.nomePassageiro" required>
+        <span ng-show="form.$submitted && form.nomePassageiro.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Telefone Passageiro</label>
+        <input type="tel" name="telPassageiro" class="form-control" ng-model="viagem.telPassageiro" required>
+        <span ng-show="form.$submitted && form.telPassageiro.$error.required" class="form-controle alert-danger">
+          Preenchimento obrigatório! 
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Nome Segundo Passageiro</label>
+        <input type="text" name="nome2Passageiro" class="form-control" ng-model="viagem.nome2Passageiro">
+      </div>
+      <div class="form-group">
+        <label>Telefone Segundo Passageiro</label>
+        <input type="tel" name="tel2Passageiro" class="form-control" ng-model="viagem.tel2Passageiro">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">
+        Salvar
+      </button>
+      <a href="/" class="btn btn-primary">Voltar</a>
+      <hr>
+    </div>
+  </form>
 </div>
-
-<form name="formulario" class="container" ng-submit="save()">
-  <div class="col-md-6">
-    <div class="form-group">
-      <label>Origem</label>
-      <input type="text" name="origem" class="form-control" ng-model="viagem.origem">
-    </div>
-    <div class="form-group">
-      <label>Destino</label>
-      <input type="text" name="destino" class="form-control" ng-model="viagem.destino">
-    </div>
-    <div class="form-group">
-      <label>Data</label>
-      <input type="date" name="data" class="form-control" ng-model="viagem.data">
-    </div>
-    <div class="form-group">
-      <label>Hora</label>
-      <input type="time" name="hora" class="form-control" ng-model="viagem.hora">
-    </div>
-    <div class="form-group">
-      <label>Veículo</label>
-      <input type="text" name="veiculo" class="form-control" ng-model="viagem.veiculo">
-    </div>
-    <div class="form-group">
-      <label>Nome Passageiro</label>
-      <input type="text" name="nomePassageiro" class="form-control" ng-model="viagem.nomePassageiro">
-    </div>
-    <div class="form-group">
-      <label>Telefone Passageiro</label>
-      <input type="tel" name="telPassageiro" class="form-control" ng-model="viagem.telPassageiro">
-    </div>
-
-    <button type="submit" class="btn btn-primary">
-      Salvar
-    </button>
-    <a href="/" class="btn btn-primary">Voltar</a>
-    <hr>
-  </div>
-  <div class="col-md-6">
-    <minha-foto></minha-foto>
-  </div>
-</form>

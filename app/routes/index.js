@@ -7,12 +7,12 @@ module.exports  = function(app) {
         .post(api.adiciona)
         .get(api.lista);
 
-    app.route('/v1/viagem/:id')
+    app.route('/v1/viagens/:id')
         .delete(api.remove)
         .get(api.busca)
         .put(api.atualiza);
         
     app.all('/*', function(req, res) {
-        res.sendFile(path.resolve('public/views/index.html'));
+        res.sendFile(path.resolve('public/index.html'));
     });
 };
