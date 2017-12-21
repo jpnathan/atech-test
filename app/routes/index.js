@@ -3,20 +3,16 @@ var api = require('../api'),
 
 module.exports  = function(app) {
     
-    app.route('/v1/fotos')
+    app.route('/v1/viagens')
         .post(api.adiciona)
         .get(api.lista);
 
-    app.route('/v1/fotos/:fotoId')
+    app.route('/v1/viagem/:id')
         .delete(api.remove)
         .get(api.busca)
         .put(api.atualiza);
-
-    app.get('/v1/fotos/grupo/:grupoId', api.listaPorGrupo);
         
-
-    // habilitando HTML5MODE
     app.all('/*', function(req, res) {
-        res.sendFile(path.resolve('public/index.html'));
+        res.sendFile(path.resolve('public/views/index.html'));
     });
 };

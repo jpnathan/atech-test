@@ -1,0 +1,45 @@
+<div class="page-header text-center">
+  <h1>Cadastro de Viagem</h1>
+</div>
+
+<form name="formulario" class="container" ng-submit="save()">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label>Origem</label>
+      <input type="text" name="origem" class="form-control" ng-model="viagem.origem">
+    </div>
+    <div class="form-group">
+      <label>Destino</label>
+      <input type="text" name="destino" class="form-control" ng-model="viagem.destino">
+    </div>
+    <div class="form-group">
+      <label>Data</label>
+      <input type="date" name="data" class="form-control" ng-model="viagem.data">
+    </div>
+    <div class="form-group">
+      <label>Hora</label>
+      <input type="time" name="hora" class="form-control" ng-model="viagem.hora">
+    </div>
+    <div class="form-group">
+      <label>Veículo</label>
+      <input type="text" name="veiculo" class="form-control" ng-model="viagem.veiculo">
+    </div>
+    <div class="form-group">
+      <label>Nome Passageiro</label>
+      <input type="text" name="nomePassageiro" class="form-control" ng-model="viagem.nomePassageiro">
+    </div>
+    <div class="form-group">
+      <label>Telefone Passageiro</label>
+      <input type="tel" name="telPassageiro" class="form-control" ng-model="viagem.telPassageiro">
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Salvar
+    </button>
+    <a href="/" class="btn btn-primary">Voltar</a>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <minha-foto></minha-foto>
+  </div>
+</form>
