@@ -1,6 +1,6 @@
 angular.module('atech').controller('FormController', function($scope, $http, $location, $routeParams) {
   
-  $scope.viages = {};
+  $scope.viagem = {};
   $scope.msg = '';
 
   if ($routeParams.viagemId) {
@@ -16,7 +16,7 @@ angular.module('atech').controller('FormController', function($scope, $http, $lo
   $scope.save = function() {
     if ($scope.form.$valid) {
       if ($routeParams.viagemId) {
-
+        
         $http.put('/v1/viagens/' + $scope.viagem._id, $scope.viagem)
         .success(function () {
           alert('Viagem alterada com sucesso');

@@ -4,8 +4,10 @@
 		<meta charset="UTF-8">
 		<base href="/">
 		<meta name="viewport" content="width=device-width">
-		<title>Atech</title>
+		<title>Atech Viagens</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		 crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="css/viagem.css">
 		<script src="js/lib/angular.min.js"></script>
@@ -16,12 +18,16 @@
 		<script src="js/controllers/form-controller.js"></script>
 	</head>
 <body ng-app="atech">
-	<nav class="navbar navbar-expand-lg	" style="background-color: #11161c;">
-		<a class="navbar-brand white" href="/">Atech</a>
+	<nav class="navbar navbar-expand navbar-dark flex-column bd-navbar nav-bar-viagem">
+		<img src="images/logo.png" width="100" height="100" alt="Logo" class="logo">
+		<a class="navbar-brand mr-0" href="/">
+		</a>
+		<a href="/viagens/new" class="btn btn-info button-left"> Nova Viagem </a>
 	</nav>
+	<main>
 		<ng-view>
 			
 		</ng-view>
-	</div>
+	</main>
 </body>
 </html>

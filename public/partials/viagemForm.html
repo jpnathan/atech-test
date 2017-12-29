@@ -1,11 +1,11 @@
-<div ng-controller="FormController">
-  <div class="page-header text-center">
+<div ng-controller="FormController" class="container">
+  <div class="page-header">
     <h1>Cadastro de Viagem</h1>
   </div>
 
   <p ng-show="msg.length" class="alert alert-danger">{{msg}}</p>
   
-  <form novalidate name="form" class="container" ng-submit="save()">
+  <form novalidate name="form" ng-submit="save()">
     <div class="col-md-6">
       <div class="form-group">
         <label>Origem</label>
